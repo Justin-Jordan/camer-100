@@ -7,4 +7,6 @@ framework:
         handler_id: ~
     serializer:
         mapping:
-            paths: [ '%kernel.project_dir%/config/serialization' ]
+            paths: 
+                - '%kernel.project_dir%/config/serialization'
+                - '%kernel.project_dir%/vendor/bitbag/vue-storefront2-plugin/src/Resources/serialization'

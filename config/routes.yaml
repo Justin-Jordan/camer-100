@@ -6,3 +6,6 @@ bitbag_sylius_cms_plugin:
 
 bitbag_sylius_wishlist_plugin:
     resource: "@BitBagSyliusWishlistPlugin/Resources/config/routing.yml"
+
+bitbag_sylius_vue_storefront2_plugin:
+    resource: "@BitBagSyliusVueStorefront2Plugin/Resources/config/routing.yml"

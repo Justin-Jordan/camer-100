@@ -111,6 +111,15 @@ security:
                 invalidate_session: false
                 success_handler: sylius.handler.shop_user_logout
             anonymous: true
+            
+        graphql_shop_user:
+            pattern: "%sylius.security.new_api_route%/graphql"
+            provider: sylius_api_shop_user_provider
+            stateless: true
+            anonymous: true
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
 
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

@@ -1,0 +1,6 @@
+imports:
+    - { resource: "@BitBagSyliusVueStorefront2Plugin/Resources/config/services.xml" }
+
+bitbag_sylius_vue_storefront2:
+    refresh_token_lifespan: 2592000 #that its default value
+    test_endpoint: 'http://127.0.0.1:8080/api/v2/graphql' #that its default value

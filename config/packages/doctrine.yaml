@@ -22,3 +22,9 @@ doctrine:
                 type: xml
                 dir: '%kernel.project_dir%/src/Resources/config/doctrine'
                 prefix: 'BitBag\OpenMarketplace\Entity'
+            VueStorefront2:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/vendor/bitbag/vue-storefront2-plugin/src/Resources/doctrine/model'
+                prefix: 'BitBag\SyliusVueStorefront2Plugin\Model'
+                alias: BitBag\SyliusVueStorefront2Plugin

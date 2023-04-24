@@ -13,6 +13,8 @@ imports:
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
+sylius_api:
+        enabled: true
 
 sylius_shop:
     product_grid:
@@ -39,6 +41,12 @@ sylius_product:
             classes:
                 repository: BitBag\OpenMarketplace\Repository\ProductVariantRepository
 
+sylius_taxonomy:
+   resources:
+      taxon:
+         classes:
+            repository: BitBag\SyliusVueStorefront2Plugin\Doctrine\Repository\TaxonRepository
+
 sylius_user:
     resources:
         shop:
@@ -53,3 +61,12 @@ sylius_shipping:
             classes:
                 model: BitBag\OpenMarketplace\Entity\Shipment
                 interface: BitBag\OpenMarketplace\Entity\ShipmentInterface
+
+sylius_attribute:
+        driver: doctrine/orm
+        resources:
+            product:
+                subject: BitBag\OpenMarketplace\Entity\Product
+                attribute_value:
+                    classes:
+                        model: BitBag\OpenMarketplace\Entity\ProductAttributeValue

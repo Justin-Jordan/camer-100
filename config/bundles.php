@@ -64,4 +64,6 @@ return [
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class  => ['all' => true],
     BitBag\SyliusWishlistPlugin\BitBagSyliusWishlistPlugin::class => ['all' => true],
+    Gesdinet\JWTRefreshTokenBundle\GesdinetJWTRefreshTokenBundle::class => ['all' => true],
+    BitBag\SyliusVueStorefront2Plugin\BitBagSyliusVueStorefront2Plugin::class => ['all' => true],
 ];
