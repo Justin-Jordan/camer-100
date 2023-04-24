@@ -1,0 +1,50 @@
+sylius_grid:
+    templates:
+        action:
+            archiveConversation: "Grid/Conversation/Action/archiveConversation.html.twig"
+    grids:
+        open_marketplace_admin_conversation:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%open_marketplace.model.conversation.class%"
+            fields:
+                category:
+                    type: twig
+                    label: open_marketplace.ui.form.conversation.category
+                    options:
+                        template: 'Grid/Conversation/Ui/category.html.twig'
+                shopUser:
+                    type: twig
+                    label: open_marketplace.ui.grid.conversation.applicant
+                    options:
+                        template: 'Grid/Conversation/Ui/applicant.html.twig'
+            filters:
+                status:
+                    label: open_marketplace.ui.status
+                    type: select
+                    form_options:
+                        choices:
+                            mvm.ui.open: open
+                            mvm.ui.closed: closed
+                createdAt:
+                    type: date
+                    label: sylius.ui.date
+                    options:
+                        field: messages.createdAt
+                        inclusive_to: true
+            actions:
+                main:
+                    create:
+                        type: create
+                        options:
+                            link:
+                                route: open_marketplace_admin_conversation_create
+                item:
+                    show:
+                        type: show
+                    delete:
+                        type: delete
+                    archive:
+                        type: archiveConversation
+                        label: open_marketplace.ui.grid.conversation.archive

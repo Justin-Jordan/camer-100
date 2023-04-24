@@ -1,0 +1,7 @@
+open_marketplace_vendor_page_show:
+  path: vendors/{slug}
+  methods: [GET]
+  defaults:
+    _controller: open_marketplace.controller.show_vendor_page_action
+    _sylius:
+      template: "Vendor/vendor_page.html.twig"

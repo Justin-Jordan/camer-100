@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+namespace spec\BitBag\OpenMarketplace\Refresher;
+
+use BitBag\OpenMarketplace\Entity\OrderInterface;
+use BitBag\OpenMarketplace\Refresher\PaymentRefresher;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityManager;
+use PhpSpec\ObjectBehavior;
+use Sylius\Component\Core\Model\PaymentInterface;
+
+class PaymentRefresherSpec extends ObjectBehavior
+{
+    public function let(EntityManager $entityManager): void
+    {
+        $this->beConstructedWith($entityManager);
+    }
+
+    public function it_is_initializable(): void
+    {
+        $this->shouldHaveType(PaymentRefresher::class);
+    }
+
+    public function it_refreshes_payment(
+        OrderInterface $order,
+        PaymentInterface $payment,
+    ): void {
+        $order->recalculateItemsTotal()->shouldBeCalledOnce();
+        $order->recalculateAdjustmentsTotal()->shouldBeCalledOnce();
+        $order->getTotal()->willReturn(100);
+
+        $payments = new ArrayCollection([$payment->getWrappedObject()]);
+        $order->getPayments()->willReturn($payments);
+
+        $this->refreshPayment($order);
+
+        $payment->setAmount(100)->shouldHaveBeenCalledTimes(1);
+    }
+}

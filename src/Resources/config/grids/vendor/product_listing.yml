@@ -1,0 +1,58 @@
+sylius_grid:
+  templates:
+    action:
+      edit_product: "Grid/Action/edit_product_listing.html.twig"
+  grids:
+    open_marketplace_vendor_product_listing:
+      driver:
+        name: doctrine/orm
+        options:
+          class: BitBag\OpenMarketplace\Entity\ProductListing\ProductListing
+          repository:
+            method: createQueryBuilderByVendorAndDeleted
+            arguments:
+              - "expr:service('open_marketplace.provider.vendor').provideCurrentVendor()"
+      filters:
+        search:
+          type: string
+          form_options:
+            type: contains
+          options:
+            fields: [ 'code' ]
+        status:
+          type: product_listing_status
+          label: open_marketplace.ui.status
+      fields:
+        code:
+          type: string
+          label: open_marketplace.ui.code
+
+        name:
+          type: twig
+          label: open_marketplace.ui.name
+          path: getLatestDraft
+          options:
+              template: "Grid/Field/product_listing_product_name.html.twig"
+
+        getLatestDraft.verifiedAt:
+          type: twig
+          label: open_marketplace.ui.verified_at
+          options:
+            template: "Grid/Field/product_listing_verified_at.html.twig"
+        getLatestDraft.status:
+          type: twig
+          label: open_marketplace.ui.status
+          options:
+            template: "Grid/Field/product_listing_status.html.twig"
+      actions:
+        main:
+          create:
+            type: create
+            label: open_marketplace.ui.create_new_product
+            options:
+              link:
+                route: open_marketplace_vendor_product_listing_create_product
+        item:
+          dropdown:
+            type: product_listing_dropdown
+
