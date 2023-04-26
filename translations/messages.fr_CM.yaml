@@ -4,7 +4,7 @@ sylius:
     subscribe: s'inscrire
     newsletter_description: Abonnez-vous à notre newsletter pour recevoir les nouvelles offres qui n'attendent que vous !
 
-order.on.whatsApp: commander sur WhatsApp
+order.on.whatsApp: Commander sur WhatsApp
 order.interested: Je suis intéressé par vôtre produit 
 
 open_marketplace:
