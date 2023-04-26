@@ -3,6 +3,7 @@ sylius:
     about_us_content: Chez Camer 100%, nous sommes passionnés par le monde de l'e-commerce et de la vente en ligne. Notre objectif est de fournir à nos clients une expérience d'achat inoubliable, en leur proposant une large gamme de produits de haute qualité et en mettant à leur disposition un service client exceptionnel. Nous sommes fiers de travailler avec des partenaires fiables pour assurer la livraison rapide et efficace de toutes les commandes. En tant que client de Camer 100%, vous pouvez être assuré(e) que vous recevrez le meilleur traitement possible, de la première visite sur notre site jusqu'à la livraison de votre commande.
     subscribe: s'inscrire
     newsletter_description: Abonnez-vous à notre newsletter pour recevoir les nouvelles offres qui n'attendent que vous !
+    carousel_header: Nôtre sélection
 
 order.on.whatsApp: Commander sur WhatsApp
 order.interested: Je suis intéressé par vôtre produit 
