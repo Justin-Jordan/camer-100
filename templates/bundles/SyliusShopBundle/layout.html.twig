@@ -106,9 +106,6 @@
                 <div class="ui large stackable menu">
                     {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'menu_category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
                     {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'about', 'template' : '@BitBagSyliusCmsPlugin/Shop/Page/Show/_link.html.twig'})) }}
-                    <a href="{{ path('sylius_admin_login') }}" class="item">
-                        <span class="ui label blue credentials">Admin credentials: bitbag, password: password</span>
-                    </a>
                 </div>
             </header>
         {% endblock %}
