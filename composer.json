@@ -9,6 +9,8 @@
         "bitbag/vue-storefront2-plugin": "^1.2",
         "bitbag/wishlist-plugin": "^2.0",
         "sylius/sylius": "~1.11.0",
+        "symfony/mailer": "^6.1",
+        "symfony/mailjet-mailer": "^6.2",
         "symfony/webpack-encore-bundle": "^1.15"
     },
     "require-dev": {
