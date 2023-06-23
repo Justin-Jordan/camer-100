@@ -2,5 +2,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr_CM
+    router.request_context.scheme: 'https'
 
 
+imports:
+    - { resource: "@BitBagSyliusCmsPlugin/Resources/config/services/sitemap_provider.yml" }

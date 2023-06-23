@@ -10,6 +10,8 @@ imports:
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "../resources/*" }
 
+    - { resource: "@SitemapPlugin/Resources/config/config.yaml" }
+
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
