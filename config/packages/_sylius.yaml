@@ -22,6 +22,12 @@ sylius_shop:
     product_grid:
         include_all_descendants: true
 
+sylius_channel:
+    resources:
+        channel:
+            classes:
+                model: BitBag\OpenMarketplace\Entity\Channel
+
 sylius_order:
     resources:
         order:
@@ -47,6 +53,7 @@ sylius_taxonomy:
    resources:
       taxon:
          classes:
+            model: BitBag\OpenMarketplace\Entity\Taxon
             repository: BitBag\SyliusVueStorefront2Plugin\Doctrine\Repository\TaxonRepository
 
 sylius_user:

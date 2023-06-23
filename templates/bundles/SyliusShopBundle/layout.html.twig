@@ -12,14 +12,21 @@
     <!-- End Matomo Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>{% block title %}Site de vente en ligne au Cameroun - Camer 100%{% endblock %}</title>
+<title>
+    {% block title %}
+        {% include "bundles/sylius-seo-plugin/Shop/Header/_title.html.twig" with {
+            resource: product ?? sylius.channel
+        } %}
+        
+    {% endblock %}
+</title>
+    {% block metatags %}
+        {{ sylius_template_event('dedi_sylius_seo_plugin.metatags', { resource: product ?? sylius.channel }) }}
+        {{ sylius_template_event('dedi_sylius_seo_plugin.rich_snippets') }}
+    {% endblock %}
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
-    {% block metatags %}
-    {% endblock %}
 
     {% block stylesheets %}
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">

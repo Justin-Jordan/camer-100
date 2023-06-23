@@ -12,9 +12,32 @@ declare(strict_types=1);
 namespace BitBag\OpenMarketplace\Entity;
 
 use BitBag\OpenMarketplace\Model\Product\ProductTrait;
+use Dedi\SyliusSEOPlugin\Domain\SEO\Adapter\ReferenceableInterface;
+use Dedi\SyliusSEOPlugin\Domain\SEO\Adapter\ReferenceableTrait;
+use Dedi\SyliusSEOPlugin\Domain\SEO\Adapter\RichSnippetProductSubjectInterface;
+use Dedi\SyliusSEOPlugin\Entity\SEOContent;
 use Sylius\Component\Core\Model\Product as BaseProduct;
+use Dedi\SyliusSEOPlugin\Domain\SEO\Adapter\RichSnippetSubjectInterface;
+use Dedi\SyliusSEOPlugin\Domain\SEO\Adapter\RichSnippetProductSubjectTrait;
 
-class Product extends BaseProduct implements ProductInterface
+class Product extends BaseProduct implements ProductInterface, ReferenceableInterface, RichSnippetProductSubjectInterface
 {
     use ProductTrait;
+    use ReferenceableTrait;
+    use RichSnippetProductSubjectTrait;
+
+    protected function createReferenceableContent(): ReferenceableInterface
+    {
+        return new SEOContent();
+    }
+
+    public function getRichSnippetSubjectParent(): ?RichSnippetSubjectInterface
+    {
+        return $this->getMainTaxon();
+    }
+
+    public function getRichSnippetSubjectType(): string
+    {
+        return 'product';
+    }
 }
