@@ -10,6 +10,8 @@ imports:
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "../resources/*" }
 
+    - { resource: "@SitemapPlugin/Resources/config/config.yaml" }
+
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
@@ -19,6 +21,12 @@ sylius_api:
 sylius_shop:
     product_grid:
         include_all_descendants: true
+
+sylius_channel:
+    resources:
+        channel:
+            classes:
+                model: BitBag\OpenMarketplace\Entity\Channel
 
 sylius_order:
     resources:
@@ -45,6 +53,7 @@ sylius_taxonomy:
    resources:
       taxon:
          classes:
+            model: BitBag\OpenMarketplace\Entity\Taxon
             repository: BitBag\SyliusVueStorefront2Plugin\Doctrine\Repository\TaxonRepository
 
 sylius_user:
