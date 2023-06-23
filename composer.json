@@ -8,6 +8,8 @@
         "bitbag/cms-plugin": "^3.2",
         "bitbag/vue-storefront2-plugin": "^1.2",
         "bitbag/wishlist-plugin": "^2.0",
+        "dedi/sylius-seo-plugin": "^3.0",
+        "stefandoorn/sitemap-plugin": "^2.1",
         "sylius/sylius": "~1.11.0",
         "symfony/mailer": "^6.1",
         "symfony/mailjet-mailer": "^6.2",

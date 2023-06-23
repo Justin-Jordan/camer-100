@@ -66,4 +66,6 @@ return [
     BitBag\SyliusWishlistPlugin\BitBagSyliusWishlistPlugin::class => ['all' => true],
     Gesdinet\JWTRefreshTokenBundle\GesdinetJWTRefreshTokenBundle::class => ['all' => true],
     BitBag\SyliusVueStorefront2Plugin\BitBagSyliusVueStorefront2Plugin::class => ['all' => true],
+    SitemapPlugin\SitemapPlugin::class => ['all' => true],
+    Dedi\SyliusSEOPlugin\DediSyliusSEOPlugin::class => ['all' => true],
 ];
