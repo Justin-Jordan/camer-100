@@ -34,6 +34,32 @@ shopConfig.name = 'shop';
 
 Encore.reset();
 
+// Molla Shop config
+Encore
+  .setOutputPath('public/_themes/camer100/molla/build/shop/')
+  .setPublicPath('/_themes/camer100/molla/build/shop/')
+  .addEntry('molla-shop-entry', './assets/molla/shop/entry.js')
+  .disableSingleRuntimeChunk()
+  .cleanupOutputBeforeBuild()
+  .copyFiles({
+    from: 'themes/Molla/public/assets/images',
+    to: '../../assets/molla/shop/img/[path][name].[ext]',
+    includeSubdirectories: true,
+    pattern: /.*/,
+  })
+  .enableSourceMaps(!Encore.isProduction())
+  .enableVersioning(Encore.isProduction())
+  .enableSassLoader();
+
+const mollaShopConfig = Encore.getWebpackConfig();
+
+mollaShopConfig.resolve.alias['sylius/ui'] = uiBundleScripts;
+mollaShopConfig.resolve.alias['sylius/ui-resources'] = uiBundleResources;
+mollaShopConfig.resolve.alias['sylius/bundle'] = syliusBundles;
+mollaShopConfig.name = 'molla_shop';
+
+Encore.reset();
+
 // Admin config
 Encore
   .setOutputPath('public/build/admin/')
@@ -53,4 +79,4 @@ adminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
 adminConfig.externals = Object.assign({}, adminConfig.externals, { window: 'window', document: 'document' });
 adminConfig.name = 'admin';
 
-module.exports = [shopConfig, adminConfig, bitbagCmsShop, bitbagCmsAdmin, bitbagWishlistShop, bitbagWishlistAdmin];
+module.exports = [shopConfig, adminConfig, bitbagCmsShop, bitbagCmsAdmin, bitbagWishlistShop, bitbagWishlistAdmin, mollaShopConfig];

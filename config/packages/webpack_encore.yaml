@@ -7,3 +7,4 @@ webpack_encore:
         cms_admin: '%kernel.project_dir%/public/build/bitbag/cms/admin'
         wishlist_shop: '%kernel.project_dir%/public/build/bitbag/wishlist/shop'
         wishlist_admin: '%kernel.project_dir%/public/build/bitbag/wishlist/admin'
+        molla_shop: '%kernel.project_dir%/public/_themes/camer100/molla/build/shop'

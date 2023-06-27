@@ -1,0 +1,8 @@
+{
+    "name": "camer100/molla",
+    "extra": {
+        "sylius-theme": {
+            "title": "Molla"
+        }
+    }
+}
