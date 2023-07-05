@@ -1,0 +1,75 @@
+{% set product = order_item.variant.product %}
+
+{% set message = "order.interested"|trans ~ " " ~ product.name %}
+{% set message = message|url_encode %}
+
+{% form_theme form '@SyliusShop/Form/theme.html.twig' %}
+
+
+<div class="ui segment" id="sylius-product-selecting-variant">
+	{{ sonata_block_render_event('sylius.shop.product.show.before_add_to_cart', {'product': product, 'order_item': order_item}) }}
+
+	{{ form_start(form, {
+        'action': path('sylius_shop_ajax_cart_add_item', {'productId': product.id}),
+        'attr': {
+            'id': 'sylius-product-adding-to-cart',
+            'class': 'ui loadable form',
+            'novalidate': 'novalidate',
+            'data-redirect': path(configuration.getRedirectRoute('summary'))
+        }
+    }) }}
+
+	{{ form_errors(form) }}
+
+	<div class="ui red label bottom pointing hidden sylius-validation-error" id="sylius-cart-validation-error"></div>
+
+	{% if not product.simple %}
+		{% if product.variantSelectionMethodChoice %}
+			{% include '@SyliusShop/Product/Show/_variants.html.twig' %}
+		{% else %}
+			{% include '@SyliusShop/Product/Show/_options.html.twig' %}
+		{% endif %}
+	{% endif %}
+
+	{{ form_row(form.cartItem.quantity) }}
+
+	{{ sonata_block_render_event('sylius.shop.product.show.add_to_cart_form', {
+        'product': product,
+        'order_item': order_item
+    }) }}
+
+	<div class="field">
+		{{ form.addToWishlist.vars.label|trans }}
+		{{ form_widget(form.wishlists) }}
+	</div>
+	<div class="ui hidden divider"></div>
+
+	<div class="ui grid centered">
+		{#<div class="mobile ui two stackable column row tablet ui two column row computer">
+			<div class="mobile column tablet column computer column">
+				<button id="{{ form.addToWishlist.vars.id }}" name="{{ form.addToWishlist.vars.full_name }}" class="{{ form.addToWishlist.vars.attr.class }} mobile only fluid" data-bb-toggle="wishlist-variant" {{ sylius_test_html_attribute('wishlist-add-variant') }}>
+					<i class="heart icon"></i>
+					{{ form.addToWishlist.vars.label|trans }}
+				</button>
+			</div>
+			<div class="mobile column tablet column computer column">
+				{% if product.getVendor() is null or product.getVendor().isEnabled() %}
+				<button type="submit" class="ui primary icon labeled button large mobile only large fluid " {{ sylius_test_html_attribute('add-to-cart-button') }}>
+					<i class="cart icon"></i>
+					{{ 'sylius.ui.add_to_cart'|trans }}
+				</button>
+			{% endif %}
+			</div>
+
+		</div>#}
+		<div class="mobile column tablet column computer column">
+			<a target="_blank" href="https://wa.me/237694694792?text={{ message }}," class="fluid ui large green icon labeled button">
+				<i class="whatsapp icon"></i>
+				{{ 'order.on.whatsApp'|trans }}
+			</a>
+		</div>
+	</div>
+
+	{{ form_row(form._token) }}
+	{{ form_end(form, {'render_rest': false}) }}
+</div>
