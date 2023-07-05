@@ -8,6 +8,10 @@ sylius:
 order.on.whatsApp: Commander sur WhatsApp
 order.interested: Je suis intéressé par vôtre produit 
 
+molla:
+    ui:
+        question_call: 'Got Question? Call us 24/7'
+
 open_marketplace:
     ui:
         conversation_categories: 'Message categories'

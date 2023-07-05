@@ -1,0 +1,38 @@
+fos_ck_editor:
+  base_path: '/build/fosckeditor/'
+  js_path: '/build/fosckeditor/ckeditor.js'
+
+  default_config: bitbag_sylius_cms_plugin
+  configs:
+      bitbag_sylius_cms_plugin:
+          toolbar: bitbag_sylius_cms_plugin_toolbar
+          enterMode: 3
+          forcePasteAsPlainText: 'allow-word'
+          allowedContent: true
+          extraPlugins:
+              - 'mediaVideo'
+              - 'mediaImage'
+          removePlugins:
+              - "exportpdf"
+  plugins:
+      mediaVideo:
+          path: '/bundles/bitbagsyliuscmsplugin/js/ckeditor-plugins/video/plugin.js'
+          filename: 'plugin.js'
+      mediaImage:
+          path: '/bundles/bitbagsyliuscmsplugin/js/ckeditor-plugins/image/plugin.js'
+          filename: 'plugin.js'
+  toolbars:
+      configs:
+          bitbag_sylius_cms_plugin_toolbar:
+              - '@standard.clipboard'
+              - '@standard.editing'
+              - '@standard.links'
+              - '@standard.insert'
+              - '@standard.tools'
+              - '@standard.document'
+              - '/'
+              - '@standard.basic_styles'
+              - '@standard.paragraph'
+              - '@standard.about'
+      items:
+          standard.insert: ['Image', 'MediaVideo', 'MediaImage', 'Table', 'HorizontalRule', 'SpecialChar']

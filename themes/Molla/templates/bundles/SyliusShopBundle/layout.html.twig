@@ -111,11 +111,7 @@ s.parentNode.insertBefore(g, s);
 				{% block top %}
 					<div class="header-top">
 						<div class="container">
-							<div class="header-left">
-								<a href="tel:#">
-									<i class="icon-phone"></i>
-									{{ 'molla.ui.call'|trans }} {{ sylius.channel.contactPhoneNumber }}</a>
-							</div>
+							{% include '@SyliusShop/Menu/_phone.html.twig' %}
 
 
 							<div class="header-right">

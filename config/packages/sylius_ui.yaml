@@ -1,0 +1,24 @@
+sylius_ui:
+  events:
+    sylius.shop.layout.footer:
+      blocks:
+        icon_box: '@SyliusShop/Layout/Footer/IconBox/_iconBox.html.twig'
+        footer_middle: '@SyliusShop/Layout/Footer/Middle/_middle.html.twig'
+        footer_bottom: '@SyliusShop/Layout/Footer/Bottom/_bottom.html.twig'
+        grid:
+          enabled: false
+        content:
+          enabled: false
+        after_legacy:
+          enabled: false
+    sylius.shop.layout.footer.middle:
+      blocks:
+        info: '@SyliusShop/Layout/Footer/Middle/Info/_info.html.twig'
+    sylius.shop.layout.footer.middle.info:
+      blocks:
+        presentation: '@SyliusShop/Layout/Footer/Middle/Info/_presentation.html.twig'
+        about: '@SyliusShop/Layout/Footer/Middle/Info/_about.html.twig'
+    sylius.shop.layout.footer.middle.info.about:
+      blocks:
+        phone: '@SyliusShop/Layout/Footer/Middle/Info/_phone.html.twig'
+        payment: '@SyliusShop/Layout/Footer/Middle/Info/_payment_methods.html.twig'

@@ -7,8 +7,9 @@
 	</div>
 {% else %}
 	<li class="login">
-		<a href="#signin-modal" data-toggle="modal">{{ 'sylius.ui.login'|trans }}
-			/
-			{{ 'sylius.ui.register'|trans }}</a>
+		<a href="{{ path('sylius_shop_login') }}" class="item">{{ 'sylius.ui.login'|trans }}</a>
+	</li>
+	<li class="login">
+		<a href="{{ path('sylius_shop_register') }}" class="item">{{ 'sylius.ui.register'|trans }}</a>
 	</li>
 {% endif %}
