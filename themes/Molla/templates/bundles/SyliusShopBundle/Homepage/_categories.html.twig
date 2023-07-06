@@ -1,0 +1,12 @@
+<div class="container">
+	<h2 class="title text-center mb-2">{{'sylius.ui.explore_popular_categories'}}</h2>
+
+	<div class="cat-blocks-container">
+		<div class="row">
+			{{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': sylius.channel.menuTaxon.code, 'count': 5, 'template': '@SyliusShop/Product/_taxonList.html.twig'})) }}
+
+		</div>
+	</div>
+</div>
+
+<div class="mb-2"></div>
