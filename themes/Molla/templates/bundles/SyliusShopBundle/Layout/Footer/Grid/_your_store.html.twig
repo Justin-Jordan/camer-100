@@ -1,9 +1,23 @@
-<div class="four wide column">
-    <h4 class="ui inverted header">{{ 'sylius.ui.your_store'|trans }}</h4>
-    <div class="ui inverted link list">
-        <a href="#" class="item">{{ 'sylius.ui.about'|trans }}</a>
-        <a href="#" class="item">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
-        <a href="#" class="item">{{ 'sylius.ui.privacy_policy'|trans }}</a>
-        <a href="{{ path('sylius_shop_contact_request') }}" class="item">{{ 'sylius.ui.contact_us'|trans }}</a>
-    </div>
+<div class="col-sm-4 col-lg-2">
+	<div class="widget">
+		<h4 class="widget-title">{{ 'sylius.ui.your_store'|trans }}</h4>
+
+		<ul class="widget-list">
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('about') }}">{{ 'sylius.ui.about'|trans }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('how_to_shop_on_camer100') }}">{{ 'sylius.ui.how_to_shop_on_camer100'|trans }}</a>
+			</li>
+			<li>
+				<a href="{{ path('bitbag_sylius_cms_plugin_shop_frequently_asked_question_index') }}">{{ 'app.ui.faqs'|trans }}</a>
+			</li>
+			<li>
+				<a href="{{ path('sylius_shop_contact_request') }}">{{ 'sylius.ui.contact_us'|trans }}</a>
+			</li>
+			<li>
+				<a href={{ path('sylius_shop_login') }}>{{ 'sylius.ui.login'|trans }}</a>
+			</li>
+		</ul>
+	</div>
 </div>

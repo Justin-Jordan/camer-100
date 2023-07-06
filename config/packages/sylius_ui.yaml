@@ -14,6 +14,7 @@ sylius_ui:
     sylius.shop.layout.footer.middle:
       blocks:
         info: '@SyliusShop/Layout/Footer/Middle/Info/_info.html.twig'
+        grid: '@SyliusShop/Layout/Footer/Grid/_grid.html.twig'
     sylius.shop.layout.footer.middle.info:
       blocks:
         presentation: '@SyliusShop/Layout/Footer/Middle/Info/_presentation.html.twig'
@@ -22,3 +23,12 @@ sylius_ui:
       blocks:
         phone: '@SyliusShop/Layout/Footer/Middle/Info/_phone.html.twig'
         payment: '@SyliusShop/Layout/Footer/Middle/Info/_payment_methods.html.twig'
+    sylius.shop.layout.footer.grid:
+      blocks:
+        your_store: '@SyliusShop/Layout/Footer/Grid/_your_store.html.twig'
+        customer_care: '@SyliusShop/Layout/Footer/Grid/_customer_care.html.twig'
+        account: '@SyliusShop/Layout/Footer/Grid/_account.html.twig'
+        plus:
+          enabled: false
+        payment_methods:
+          enabled: false

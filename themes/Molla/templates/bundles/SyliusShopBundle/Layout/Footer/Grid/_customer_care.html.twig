@@ -1,9 +1,26 @@
-<div class="four wide column">
-    <h4 class="ui inverted header">{{ 'sylius.ui.customer_care'|trans  }}</h4>
-    <div class="ui inverted link list">
-        <a href="{{ path('sylius_shop_contact_request') }}" class="item">{{ 'sylius.ui.contact_us'|trans  }}</a>
-        <a href="#" class="item">{{ 'sylius.ui.faqs'|trans  }}</a>
-        <a href="#" class="item">{{ 'sylius.ui.delivery_and_shipping'|trans  }}</a>
-        <a href="#" class="item">{{ 'sylius.ui.returns_policy'|trans  }}</a>
-    </div>
+<div class="col-sm-4 col-lg-2">
+	<div class="widget">
+		<h4 class="widget-title">{{ 'sylius.ui.customer_care'|trans  }}</h4>
+
+		<ul class="widget-list">
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('payment_method') }}">{{ 'sylius.ui.payment_method'|trans  }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('money_back_garantee') }}">{{ 'sylius.ui.money_back_garantee'|trans  }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('returns_policy') }}">{{ 'sylius.ui.returns_policy'|trans  }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('delivery_and_shipping') }}">{{ 'sylius.ui.delivery_and_shipping'|trans  }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('terms_and_conditions') }}">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
+			</li>
+			<li>
+				<a href="{{ bitbag_cms_render_link_for_code('privacy_policy') }}">{{ 'sylius.ui.privacy_policy'|trans }}</a>
+			</li>
+		</ul>
+	</div>
 </div>
