@@ -1,0 +1,56 @@
+<div class="mb-3"></div>
+<!-- End .mb-3 -->
+
+{% for taxon in taxons %}
+	<div class="container clothing ">
+		<div class="heading heading-flex heading-border mb-3">
+			<div class="heading-left">
+				<h2 class="title">{{ taxon.name }}</h2>
+				<!-- End .title -->
+			</div>
+			<!-- End .heading-left -->
+
+			<div class="heading-right">
+				<ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="clot-new-link" data-toggle="tab" href="#clot-new-tab" role="tab" aria-controls="clot-new-tab" aria-selected="true">{{'sylius.ui.new'|trans}}</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End .heading-right -->
+		</div>
+		<!-- End .heading -->
+
+		<div class="tab-content tab-content-carousel">
+			<div class="tab-pane p-0 fade show active" id="clot-new-tab" role="tabpanel" aria-labelledby="clot-new-link">
+				<div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" data-owl-options='{
+											                                "nav": false,
+											                                "dots": true,
+											                                "margin": 20,
+											                                "loop": false,
+											                                "responsive": {
+											                                    "0": {
+											                                        "items":2
+											                                    },
+											                                    "480": {
+											                                        "items":2
+											                                    },
+											                                    "768": {
+											                                        "items":3
+											                                    },
+											                                    "992": {
+											                                        "items":4
+											                                    },
+											                                    "1280": {
+											                                        "items":5,
+											                                        "nav": true
+											                                    }
+											                                }
+											                            }'>
+					{{ render(url('app_shop_partial_product_index_latest_by_taxon_code', {'code': taxon.code, 'count': 5, 'template': '@SyliusShop/Homepage/_list.html.twig'})) }}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}

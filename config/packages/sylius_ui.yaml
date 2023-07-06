@@ -36,7 +36,16 @@ sylius_ui:
 
     sylius.shop.homepage:
       blocks:
-        newsletter: '@SyliusShop/Homepage/_newsletter.html.twig'
+        latest_products_carousel:
+          enabled: false
+        latest_products:
+          enabled: false
+        latest_by_taxon_and_products:
+          template: '@SyliusShop/Homepage/_latestByTaxonAndProducts.html.twig'
+          priority: 40
+        newsletter:
+          template: '@SyliusShop/Homepage/_newsletter.html.twig'
+          priority: 30
         products_grid:
           enabled: false
         about_us:

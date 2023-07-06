@@ -45,6 +45,7 @@ sylius_product:
         product:
             classes:
                 model: BitBag\OpenMarketplace\Entity\Product
+                repository: BitBag\OpenMarketplace\Repository\ProductRepository
         product_variant:
             classes:
                 repository: BitBag\OpenMarketplace\Repository\ProductVariantRepository
