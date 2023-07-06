@@ -36,6 +36,9 @@ sylius_ui:
 
     sylius.shop.homepage:
       blocks:
+        newsletter: '@SyliusShop/Homepage/_newsletter.html.twig'
+        products_grid:
+          enabled: false
         about_us:
           enabled: false
         latest_post: '@SyliusShop/Homepage/_latestPosts.html.twig'
