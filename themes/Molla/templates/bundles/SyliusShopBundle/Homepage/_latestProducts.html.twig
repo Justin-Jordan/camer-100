@@ -1,0 +1,54 @@
+<div class="bg-light pt-3 pb-5">
+	<div class="container">
+		<div class="heading heading-flex heading-border mb-3">
+			<div class="heading-left">
+				<h2 class="title">{{'sylius.ui.hot_deals_products'}}</h2>
+			</div>
+			<!-- End .heading-left -->
+
+			<div class="heading-right">
+				<ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="hot-all-link" data-toggle="tab" href="#hot-all-tab" role="tab" aria-controls="hot-all-tab" aria-selected="true">{{'sylius.ui.all'|trans}}</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End .heading-right -->
+		</div>
+		<!-- End .heading -->
+
+		<div class="tab-content tab-content-carousel">
+			<div class="tab-pane p-0 fade show active" id="hot-all-tab" role="tabpanel" aria-labelledby="hot-all-link">
+				<div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" data-owl-options='{
+																		                                    "nav": false,
+																		                                    "dots": true,
+																		                                    "margin": 20,
+																		                                    "loop": false,
+																		                                    "responsive": {
+																		                                        "0": {
+																		                                            "items":2
+																		                                        },
+																		                                        "480": {
+																		                                            "items":2
+																		                                        },
+																		                                        "768": {
+																		                                            "items":3
+																		                                        },
+																		                                        "992": {
+																		                                            "items":4
+																		                                        },
+																		                                        "1280": {
+																		                                            "items":5,
+																		                                            "nav": true
+																		                                        }
+																		                                    }
+																		                                }'>
+					{{ render(url('sylius_shop_partial_product_index_latest', {'count': 6, 'template': '@SyliusShop/Homepage/_list.html.twig'})) }}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mb-3"></div>

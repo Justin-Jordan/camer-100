@@ -39,7 +39,7 @@ sylius_ui:
         latest_products_carousel:
           enabled: false
         latest_products:
-          enabled: false
+          template: '@SyliusShop/Homepage/_latestProducts.html.twig'
         latest_by_taxon_and_products:
           template: '@SyliusShop/Homepage/_latestByTaxonAndProducts.html.twig'
           priority: 40
