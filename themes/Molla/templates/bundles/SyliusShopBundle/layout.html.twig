@@ -139,8 +139,8 @@ s.parentNode.insertBefore(g, s);
 				{% endblock %}
 
 			</header>
-			<div class="ui container">
-				{% block header %}
+			<main class="main">
+			{% block header %}
 					<header>
 						{% include '@SyliusShop/_header.html.twig' %}
 
@@ -159,7 +159,7 @@ s.parentNode.insertBefore(g, s);
 				{% block content %}{% endblock %}
 
 				{{ sonata_block_render_event('sylius.shop.layout.after_content') }}
-			</div>
+			</main>
 
 			{% block footer %}
 				{% include '@SyliusShop/_footer.html.twig' %}

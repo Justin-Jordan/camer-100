@@ -32,3 +32,10 @@ sylius_ui:
           enabled: false
         payment_methods:
           enabled: false
+    
+
+    sylius.shop.homepage:
+      blocks:
+        about_us:
+          enabled: false
+        latest_post: '@SyliusShop/Homepage/_latestPosts.html.twig'
