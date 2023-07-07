@@ -68,4 +68,6 @@ return [
     BitBag\SyliusVueStorefront2Plugin\BitBagSyliusVueStorefront2Plugin::class => ['all' => true],
     SitemapPlugin\SitemapPlugin::class => ['all' => true],
     Dedi\SyliusSEOPlugin\DediSyliusSEOPlugin::class => ['all' => true],
+    Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
+    Odiseo\SyliusBannerPlugin\OdiseoSyliusBannerPlugin::class => ['all' => true],
 ];
