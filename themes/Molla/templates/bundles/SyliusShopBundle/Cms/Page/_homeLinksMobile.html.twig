@@ -1,0 +1,10 @@
+{% if resources.data|length > 0 %}
+	<ul class="mobile-menu">
+		{% for page in resources.data %}
+			<li class="active">
+				<a href="{{ path('bitbag_sylius_cms_plugin_shop_page_show', {'slug' : page.slug}) }}">{{ page.name }}</a>
+
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}
