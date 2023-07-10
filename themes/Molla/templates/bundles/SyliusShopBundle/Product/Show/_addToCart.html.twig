@@ -45,7 +45,7 @@
 	<div class="ui hidden divider"></div>
 
 	<div class="ui grid centered">
-		{#<div class="mobile ui two stackable column row tablet ui two column row computer">
+		<div class="mobile ui two stackable column row tablet ui two column row computer">
 			<div class="mobile column tablet column computer column">
 				<button id="{{ form.addToWishlist.vars.id }}" name="{{ form.addToWishlist.vars.full_name }}" class="{{ form.addToWishlist.vars.attr.class }} mobile only fluid" data-bb-toggle="wishlist-variant" {{ sylius_test_html_attribute('wishlist-add-variant') }}>
 					<i class="heart icon"></i>
@@ -61,7 +61,7 @@
 			{% endif %}
 			</div>
 
-		</div>#}
+		</div>
 		<div class="mobile column tablet column computer column">
 			<a target="_blank" href="https://wa.me/237694694792?text={{ message }}," class="fluid ui large green icon labeled button">
 				<i class="whatsapp icon"></i>

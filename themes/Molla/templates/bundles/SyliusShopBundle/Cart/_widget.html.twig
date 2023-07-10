@@ -1,0 +1,10 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+<div class="dropdown cart-dropdown">
+	<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+		{{ sylius_template_event('sylius.shop.cart.widget.button', {'cart': cart}) }}
+
+	</a>
+	{{ sylius_template_event('sylius.shop.cart.widget.popup', {'cart': cart}) }}
+
+</div>

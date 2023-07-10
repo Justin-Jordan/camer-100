@@ -1,0 +1,22 @@
+{% if wishlists|length < 2 %}
+
+	{% set wishlistId = 0 %}
+	{% set wishlistProductsCount = 0 %}
+
+	{% for data in wishlists %}
+		{% set wishlistId = data.id %}
+		{% set wishlistProductsCount = data.wishlistProducts.count %}
+	{% endfor %}
+
+	<a href="{{ path('bitbag_sylius_wishlist_plugin_shop_wishlist_list_products') }}" class="wishlist-link">
+		<i class="icon-heart-o"></i>
+		<span class="wishlist-count">{{- wishlistProductsCount -}}</span>
+		<span class="wishlist-txt">{{'sylius.ui.whishlist'|trans}}</span>
+	</a>
+{% else %}
+    <a data-bb-wishlist-enter href="{{ path('bitbag_sylius_wishlist_plugin_shop_wishlist_list_products') }}" class="wishlist-link">
+		<i class="icon-heart-o"></i>
+		<span class="wishlist-count">{{- wishlists|length -}}</span>
+		<span class="wishlist-txt">{{'sylius.ui.whishlist'}}</span>
+	</a>
+{% endif %}

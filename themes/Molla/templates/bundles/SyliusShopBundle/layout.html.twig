@@ -138,21 +138,20 @@ s.parentNode.insertBefore(g, s);
 					</div>
 				{% endblock %}
 
-			</header>
-			<main class="main">
 				{% block header %}
 					<header>
 						{% include '@SyliusShop/_header.html.twig' %}
 
 						{{ sonata_block_render_event('sylius.shop.layout.after_header') }}
 
-						<div class="ui large stackable menu">
-							{{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'menu_category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
-							{{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'about', 'template' : '@BitBagSyliusCmsPlugin/Shop/Page/Show/_link.html.twig'})) }}
-						</div>
+						{% include '@SyliusShop/_headerBottom.html.twig' %}
+
 					</header>
 				{% endblock %}
 				{% include '@SyliusUi/_flashes.html.twig' %}
+
+			</header>
+			<main class="main">
 
 				{{ sonata_block_render_event('sylius.shop.layout.before_content') }}
 
@@ -165,6 +164,8 @@ s.parentNode.insertBefore(g, s);
 				{% include '@SyliusShop/_footer.html.twig' %}
 			{% endblock %}
 		</div>
+
+		{{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'menu_category', 'template': '@SyliusShop/Taxon/_mobileMenu.html.twig'})) }}
 
 		{% block javascripts %}
 			{% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
