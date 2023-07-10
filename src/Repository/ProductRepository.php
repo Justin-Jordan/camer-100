@@ -36,8 +36,7 @@ final class ProductRepository extends BaseProductRepository implements ProductRe
     ): Pagerfanta {
         $qb = $this->createListQueryBuilder($request->get('_locale'))
             ->andWhere('o.vendor = :vendor')
-            ->setParameter('vendor', $vendor)
-        ;
+            ->setParameter('vendor', $vendor);
 
         if ($request->get('sorting')) {
             $key = key($request->get('sorting'));
@@ -45,13 +44,11 @@ final class ProductRepository extends BaseProductRepository implements ProductRe
 
             switch ($key) {
                 case 'createdAt':
-                    $qb->orderBy('o.createdAt', $sortingOption)
-                    ;
+                    $qb->orderBy('o.createdAt', $sortingOption);
 
                     break;
                 case 'name':
-                    $qb->orderBy('translation.name', $sortingOption)
-                    ;
+                    $qb->orderBy('translation.name', $sortingOption);
 
                     break;
                 case 'price':
@@ -59,8 +56,7 @@ final class ProductRepository extends BaseProductRepository implements ProductRe
                         ->select('min(v.position)')
                         ->innerJoin('m.variants', 'v')
                         ->andWhere('m.id = :product_id')
-                        ->andWhere('v.enabled = :enabled')
-                    ;
+                        ->andWhere('v.enabled = :enabled');
 
                     $qb
                         ->addSelect('variant')
@@ -76,8 +72,7 @@ final class ProductRepository extends BaseProductRepository implements ProductRe
                         )
                         ->setParameter('channelCode', $channel->getCode())
                         ->setParameter('enabled', true)
-                        ->orderBy('channelPricing.price', $sortingOption)
-                    ;
+                        ->orderBy('channelPricing.price', $sortingOption);
 
                     break;
             }
@@ -91,5 +86,26 @@ final class ProductRepository extends BaseProductRepository implements ProductRe
         $pager->setCurrentPage($currentPage);
 
         return $pager;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findLatestByChannelAndTaxonCode(ChannelInterface $channel, $code, $count)
+    {
+        return $this->createQueryBuilder('o')
+            ->innerJoin('o.channels', 'channel')
+            ->andWhere('o.enabled = :enabled')
+            ->andWhere('channel = :channel')
+            ->innerJoin('o.productTaxons', 'productTaxons')
+            ->addOrderBy('productTaxons.position', 'asc')
+            ->innerJoin('productTaxons.taxon', 'taxon')
+            ->andWhere('taxon.code = :code')
+            ->setParameter('code', $code)
+            ->setParameter('channel', $channel)
+            ->setParameter('enabled', true)
+            ->setMaxResults($count)
+            ->getQuery()
+            ->getResult();
     }
 }

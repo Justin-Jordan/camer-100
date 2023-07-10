@@ -1,0 +1,18 @@
+<div class="intro-slide" style="background-image: url({{ banner.imageName|imagine_filter('odiseo_sylius_banner_plugin_image') }}" alt="{{ banner.imageName }});">
+	<div class="container intro-content">
+		<div class="row">
+			<div class="col-auto offset-lg-3 intro-col">
+				<h3 class="intro-subtitle">{{ banner.secondaryText }}</h3>
+				<h1 class="intro-title">
+                {{ banner.mainText|raw }}
+				</h1>
+				{% if banner.url is not null %}
+					<a href="{{ banner.url }}" class="btn btn-outline-primary-2" target="_blank">
+						<span>{{ banner.buttonText }}</span>
+						<i class="icon-long-arrow-right"></i>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

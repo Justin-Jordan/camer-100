@@ -1,0 +1,21 @@
+<div class="intro-slider-container">
+	<div class="intro-slider owl-carousel owl-simple owl-nav-inside" data-toggle="owl" data-owl-options='{
+												                        "nav": false,
+												                        "responsive": {
+												                            "992": {
+												                                "nav": true
+												                            }
+												                        }
+												                    }'>
+		{% for banner in banners %}
+			<div class="swiper-slide">
+				{% include '@OdiseoSyliusBannerPlugin/Shop/Banner/_image.html.twig' with {'banner': banner} only %}
+			</div>
+		{% endfor %}
+
+	</div>
+
+	<span class="slider-loader"></span>
+</div>
+
+<div class="mb-4"></div>

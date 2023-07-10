@@ -34,6 +34,41 @@ shopConfig.name = 'shop';
 
 Encore.reset();
 
+// Molla Shop config
+Encore
+  .setOutputPath('public/_themes/camer100/molla/build/shop/')
+  .setPublicPath('/_themes/camer100/molla/build/shop/')
+  .addEntry('molla-shop-entry', './assets/molla/shop/entry.js')
+  .disableSingleRuntimeChunk()
+  .cleanupOutputBeforeBuild()
+  .copyFiles({
+    from: 'themes/Molla/public/assets/images',
+    to: '../../assets/molla/shop/img/[path][name].[ext]',
+    includeSubdirectories: true,
+    pattern: /.*/,
+  })
+  .copyFiles([
+    {from: './node_modules/ckeditor4/', to: 'ckeditor/[path][name].[ext]', pattern: /\.(js|css)$/, includeSubdirectories: false},
+    {from: './node_modules/ckeditor4/adapters', to: 'ckeditor/adapters/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/lang', to: 'ckeditor/lang/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/plugins', to: 'ckeditor/plugins/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/skins', to: 'ckeditor/skins/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/vendor', to: 'ckeditor/vendor/[path][name].[ext]'}
+])
+
+  .enableSourceMaps(!Encore.isProduction())
+  .enableVersioning(Encore.isProduction())
+  .enableSassLoader();
+
+const mollaShopConfig = Encore.getWebpackConfig();
+
+mollaShopConfig.resolve.alias['sylius/ui'] = uiBundleScripts;
+mollaShopConfig.resolve.alias['sylius/ui-resources'] = uiBundleResources;
+mollaShopConfig.resolve.alias['sylius/bundle'] = syliusBundles;
+mollaShopConfig.name = 'molla_shop';
+
+Encore.reset();
+
 // Admin config
 Encore
   .setOutputPath('public/build/admin/')
@@ -53,4 +88,4 @@ adminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
 adminConfig.externals = Object.assign({}, adminConfig.externals, { window: 'window', document: 'document' });
 adminConfig.name = 'admin';
 
-module.exports = [shopConfig, adminConfig, bitbagCmsShop, bitbagCmsAdmin, bitbagWishlistShop, bitbagWishlistAdmin];
+module.exports = [shopConfig, adminConfig, bitbagCmsShop, bitbagCmsAdmin, bitbagWishlistShop, bitbagWishlistAdmin, mollaShopConfig];

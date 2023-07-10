@@ -4,172 +4,198 @@ sylius:
     subscribe: s'inscrire
     newsletter_description: Abonnez-vous à notre newsletter pour recevoir les nouvelles offres qui n'attendent que vous !
     carousel_header: Nôtre sélection
+  ui:
+    search_in: 'Rechercher'
+    menu: 'menu'
+    categories: 'catégories'
+    browse_categories: 'Catégories'
+    whishlist: 'Favoris'
+    explore_popular_categories: 'Explorer les catégories populaires'
+    hot_deals_products: 'Les derniers bon plans'
+    from_our_blog: "Depuis nôtre blog"
+    read_more: "Lire Plus"
+    how_to_shop_on_camer100: "Comment acheter sur Camer 100%"
+    money_back_garantee: "Garanti de remboursement"
+    copyright: "© Camer 100% 2023"
+    footer:
+        about_us_content: 'Bienvenue sur Camer 100%, le site de vente en ligne qui vous propose les meilleurs produits du Cameroun à des prix imbattables.'
+    
 
 order.on.whatsApp: Commander sur WhatsApp
-order.interested: Je suis intéressé par vôtre produit 
+order.interested: Je suis intéressé par vôtre produit
+app:
+    ui:
+        blog: "Blog"
+        faq: "FAQs"
+
+molla:
+  ui:
+    question_call: 'Vous avez une question? Appeler nous 24/7'
+    call: 'Apeller'
+    links: 'Liens'
 
 open_marketplace:
-    ui:
-        conversation_categories: 'Message categories'
-        restored: "Product successfully restored"
-        removed: "Product successfully removed"
-        remove: "Remove"
-        restore_visibility: 'Restore visibility'
-        restore: 'Restore'
-        new_product_draft: "New Product Listing"
-        edit_product_draft: "Edit Product Listing"
-        draft_attributes: "Attributes"
-        no_draft_attributes: "No attributes set."
-        no_draft_taxons: "No taxons set."
-        inventory: "Inventory"
-        clients: "Customers"
-        order_list: "Orders"
-        summary_of_your_order: "Summary of your order(s)"
-        product_list: 'Product listings'
-        admin: "Admin"
-        customer: 'Customer'
-        details: 'Details'
-        disable: 'Disable'
-        disabled: 'Disabled'
-        edit: 'Edit'
-        edit_vendor: 'Edit vendor'
-        enable: 'Enable'
-        enabled: 'Enabled'
-        id: "ID"
-        tax_id: 'Tax ID'
-        vendor_dashboard: "Vendor dashboard"
-        vendor_profile: "Profile"
-        vendor: 'Vendor'
-        become_a_vendor: 'Become a Vendor'
-        product_listings: 'Product listings'
-        product_listing: 'Product listing'
-        marketplace: 'Marketplace'
-        my_vendor_account: "My vendor account"
-        manage_your_vendor_information_and_preferences: "Manage your vendor information and preferences"
-        your_vendor_profile: "Your vendor profile"
-        edit_your_vendor_information: "Edit your vendor information"
-        publishedAt: 'Published at'
-        status: 'Status'
-        tax_identifier: "Tax Identifier"
-        not_blank: "This field cannot be empty"
-        company_name: "Company name"
-        country: "Country"
-        city: "City"
-        street: "Street"
-        phone_number: "Phone number"
-        company_address: "Company Address"
-        postal_code: "Postal code"
-        pending_update_message: "Your profile has been edited. Please approve the changes by clicking on the link in the email sent to you."
-        vendors: 'Vendors'
-        logo: 'Logo'
-        invalid_logo: 'Please upload a valid image (jpg/png/svg)'
-        description: 'Description'
-        shipping_methods: "Shipping methods"
-        open: Open
-        closed: Closed
-        minimum: "minimum"
-        original: "original"
-        price: "Price"
-        product_rejected_intro: "Corresponding item has been rejected "
-        product_overview: "Product overview"
-        rejected_listing_msg: "This product has been rejected"
-        more: "More"
-        register:
-            new_vendors: New vendors
-        conversations: Messages
-        conversations_listing:
-            username: Username
-            admin_header: Messages
-            admin_subheader: Manage your messages
-            listing_header_open: Open threads
-            listing_header_closed: Closed threads
-            your_open_conversations: Manage your open threads
-            your_closed_conversations: Manage your closed threads
-            reading_closed_conversation: You're reading thread, which has been closed.
-            breadcrumb_header: Messages
-            no_open_conversations: You have no open threads
-            no_closed_conversations: You have no closed threads
-        users: Users
-        open_conversations: Open threads
-        closed_conversations: Closed threads
-        create_new_conversation: New thread
-        create_new_conversation_breadcrumb: New thread
-        create_new_conversation_header: New thread
-        conversation:
-            user_conversation: Thread with user
-            admin_conversation: Thread with administrator
-            no_subject: No subject
-            header: Message from administrator
-            with: Started by
-            your_response_header: "Your response:"
-            attachment: Attachment
-            archive_request_text_first_line: Administrator wants to archive this thread.
-            archive_request_text_second_line: Have you solved your issue?
-            yes: Yes
-            no: No
-            no_category: Message from administrator
-        form:
-            conversation_message:
-                file: File
-                submit: Submit
-            conversation:
-                category: Category
-                messages: Message
-                users: User
-        grid:
-            conversation:
-                applicant: Applicant
-                archive: Archive
-        menu:
-            conversations: Messages
-            conversation_categories: Message categories
-        new_conversation_category: 'New conversation category'
-        edit_conversation_category: 'Edit conversation category'
-        unverified: 'Unverified'
-        vendor_address: 'Vendor address'
-        vendor_details: 'Vendor details'
-        show_product_listings: 'Show product listings'
-        verified: 'Accepted'
-        verify: 'Verify'
-        new_vendor: 'New Vendor'
-        manage_products: 'Manage product listings'
-        name: 'Name'
-        accept: 'Accept'
-        reject: 'Reject'
-        confirm: 'Are you sure?'
-        code: 'Code'
-        rejected: 'Rejected'
-        created: 'Created'
-        under_verification: 'Under verification'
-        published_at: 'Published at'
-        verified_at: 'Verified at'
-        version: 'Version'
-        actions: 'Actions'
-        create_new_product: 'Create Product listing'
-        save: 'Save'
-        save_and_add: 'Save and Add'
-        save_draft: 'Save draft'
-        send_for_verification: 'Send for verification'
-        vendor_under_verification: "Your vendor account is under verification."
-        vendor_verification_accepted: "Request to become a Vendor has been granted by the Administrator."
-        order_not_found: "The order with id orderId has not been found"
-        invalid_csrf: "Invalid csrf token."
-        rejection_details: "Rejection details"
-        no_media_uploaded: "No media uploaded."
-        your_account_has_been_disabled: "Your vendor account has been disabled. Please contact administrators for more information."
-        view_orders: "View your orders"
-        footer_signature: Camer 100% - site de vente en ligne au Cameroun
-
-    email:
-        vendor_profile_update: "Vendor profile update requested"
-        request_profile_update_greeting: "Hey, you asked to change your company details."
-        request_profile_update_info: "For security purposes, we need to verify your decision. Click on the link below if you want to make a change or ignore this message."
-        postal_code: "Postal code"
-        id: 'ID'
-        tax_id: 'Tax ID'
-        vendors: 'Vendors'
+  ui:
+    conversation_categories: 'Message categories'
+    restored: 'Product successfully restored'
+    removed: 'Product successfully removed'
+    remove: 'Remove'
+    restore_visibility: 'Restore visibility'
+    restore: 'Restore'
+    new_product_draft: 'New Product Listing'
+    edit_product_draft: 'Edit Product Listing'
+    draft_attributes: 'Attributes'
+    no_draft_attributes: 'No attributes set.'
+    no_draft_taxons: 'No taxons set.'
+    inventory: 'Inventory'
+    clients: 'Customers'
+    order_list: 'Orders'
+    summary_of_your_order: 'Summary of your order(s)'
+    product_list: 'Product listings'
+    admin: 'Admin'
+    customer: 'Customer'
+    details: 'Details'
+    disable: 'Disable'
+    disabled: 'Disabled'
+    edit: 'Edit'
+    edit_vendor: 'Edit vendor'
+    enable: 'Enable'
+    enabled: 'Enabled'
+    id: 'ID'
+    tax_id: 'Tax ID'
+    vendor_dashboard: 'Vendor dashboard'
+    vendor_profile: 'Profile'
+    vendor: 'Vendor'
+    become_a_vendor: 'Become a Vendor'
+    product_listings: 'Product listings'
+    product_listing: 'Product listing'
+    marketplace: 'Marketplace'
+    my_vendor_account: 'My vendor account'
+    manage_your_vendor_information_and_preferences: 'Manage your vendor information and preferences'
+    your_vendor_profile: 'Your vendor profile'
+    edit_your_vendor_information: 'Edit your vendor information'
+    publishedAt: 'Published at'
+    status: 'Status'
+    tax_identifier: 'Tax Identifier'
+    not_blank: 'This field cannot be empty'
+    company_name: 'Company name'
+    country: 'Country'
+    city: 'City'
+    street: 'Street'
+    phone_number: 'Phone number'
+    company_address: 'Company Address'
+    postal_code: 'Postal code'
+    pending_update_message: 'Your profile has been edited. Please approve the changes by clicking on the link in the email sent to you.'
+    vendors: 'Vendors'
+    logo: 'Logo'
+    invalid_logo: 'Please upload a valid image (jpg/png/svg)'
+    description: 'Description'
+    shipping_methods: 'Shipping methods'
+    open: Open
+    closed: Closed
+    minimum: 'minimum'
+    original: 'original'
+    price: 'Price'
+    product_rejected_intro: 'Corresponding item has been rejected '
+    product_overview: 'Product overview'
+    rejected_listing_msg: 'This product has been rejected'
+    more: 'More'
+    register:
+      new_vendors: New vendors
+    conversations: Messages
+    conversations_listing:
+      username: Username
+      admin_header: Messages
+      admin_subheader: Manage your messages
+      listing_header_open: Open threads
+      listing_header_closed: Closed threads
+      your_open_conversations: Manage your open threads
+      your_closed_conversations: Manage your closed threads
+      reading_closed_conversation: You're reading thread, which has been closed.
+      breadcrumb_header: Messages
+      no_open_conversations: You have no open threads
+      no_closed_conversations: You have no closed threads
+    users: Users
+    open_conversations: Open threads
+    closed_conversations: Closed threads
+    create_new_conversation: New thread
+    create_new_conversation_breadcrumb: New thread
+    create_new_conversation_header: New thread
+    conversation:
+      user_conversation: Thread with user
+      admin_conversation: Thread with administrator
+      no_subject: No subject
+      header: Message from administrator
+      with: Started by
+      your_response_header: 'Your response:'
+      attachment: Attachment
+      archive_request_text_first_line: Administrator wants to archive this thread.
+      archive_request_text_second_line: Have you solved your issue?
+      yes: Yes
+      no: No
+      no_category: Message from administrator
+    form:
+      conversation_message:
+        file: File
+        submit: Submit
+      conversation:
+        category: Category
+        messages: Message
+        users: User
+    grid:
+      conversation:
+        applicant: Applicant
+        archive: Archive
     menu:
-        shop:
-            account:
-                vendor:
-                    header: "Vendor account"
+      conversations: Messages
+      conversation_categories: Message categories
+    new_conversation_category: 'New conversation category'
+    edit_conversation_category: 'Edit conversation category'
+    unverified: 'Unverified'
+    vendor_address: 'Vendor address'
+    vendor_details: 'Vendor details'
+    show_product_listings: 'Show product listings'
+    verified: 'Accepted'
+    verify: 'Verify'
+    new_vendor: 'New Vendor'
+    manage_products: 'Manage product listings'
+    name: 'Name'
+    accept: 'Accept'
+    reject: 'Reject'
+    confirm: 'Are you sure?'
+    code: 'Code'
+    rejected: 'Rejected'
+    created: 'Created'
+    under_verification: 'Under verification'
+    published_at: 'Published at'
+    verified_at: 'Verified at'
+    version: 'Version'
+    actions: 'Actions'
+    create_new_product: 'Create Product listing'
+    save: 'Save'
+    save_and_add: 'Save and Add'
+    save_draft: 'Save draft'
+    send_for_verification: 'Send for verification'
+    vendor_under_verification: 'Your vendor account is under verification.'
+    vendor_verification_accepted: 'Request to become a Vendor has been granted by the Administrator.'
+    order_not_found: 'The order with id orderId has not been found'
+    invalid_csrf: 'Invalid csrf token.'
+    rejection_details: 'Rejection details'
+    no_media_uploaded: 'No media uploaded.'
+    your_account_has_been_disabled: 'Your vendor account has been disabled. Please contact administrators for more information.'
+    view_orders: 'View your orders'
+    footer_signature: Camer 100% - site de vente en ligne au Cameroun
+
+  email:
+    vendor_profile_update: 'Vendor profile update requested'
+    request_profile_update_greeting: 'Hey, you asked to change your company details.'
+    request_profile_update_info: 'For security purposes, we need to verify your decision. Click on the link below if you want to make a change or ignore this message.'
+    postal_code: 'Postal code'
+    id: 'ID'
+    tax_id: 'Tax ID'
+    vendors: 'Vendors'
+  menu:
+    shop:
+      account:
+        vendor:
+          header: 'Vendor account'

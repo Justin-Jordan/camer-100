@@ -1,0 +1,35 @@
+{% if resources.data|length > 0 %}
+	{% for page in resources.data %}
+    {% if loop.index <= 5 %}
+    
+		<article class="entry">
+			{% if page.image %}
+				<figure class="entry-media">
+					<a href="{{ path('bitbag_sylius_cms_plugin_shop_page_show', {'slug' : page.slug}) }}">
+						<img src="{{ page.image.path|imagine_filter(filter|default('sylius_small')) }}" alt="image desc">
+					</a>
+				</figure>
+			{% endif %}
+
+			<div class="entry-body">
+				<div class="entry-meta">
+					<a href="#">{{ page.publishAt|date }}</a>
+				</div>
+				<!-- End .entry-meta -->
+
+				<h3 class="entry-title">
+					<a href="{{ path('bitbag_sylius_cms_plugin_shop_page_show', {'slug' : page.slug}) }}">{{ page.name }}</a>
+				</h3>
+				<!-- End .entry-title -->
+
+				<div class="entry-content">
+					<p>{{ page.content|striptags|length > 200 ? page.content|striptags|slice(0, 200) ~ '...' : page.content|striptags }}.</p>
+					<a href="{{ path('bitbag_sylius_cms_plugin_shop_page_show', {'slug' : page.slug}) }}" class="read-more">{{'sylius.ui.read_more'|trans}}</a>
+				</div>
+				<!-- End .entry-content -->
+			</div>
+			<!-- End .entry-body -->
+		</article>
+        {% endif %}
+	{% endfor %}
+{% endif %}

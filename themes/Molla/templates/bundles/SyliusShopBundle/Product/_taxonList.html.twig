@@ -1,0 +1,21 @@
+{% for taxon in taxons %}
+{% if taxon.imagesByType('thumbnail') is not empty %}
+    {% set path = taxon.imagesByType('thumbnail').first.path|imagine_filter(filter|default('sylius_shop_product_thumbnail')) %}
+{% elseif taxon.images.first %}
+    {% set path = taxon.images.first.path|imagine_filter(filter|default('sylius_shop_product_thumbnail')) %}
+{% else %}
+    {% set path = '//placehold.it/131x117' %}
+{% endif %}
+	<div class="col-6 col-sm-4 col-lg-2">
+		<a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="cat-block">
+			<figure>
+				<span>
+					<img src="{{ path }}" alt="{{ taxon.name }}">
+                    
+				</span>
+			</figure>
+
+			<h3 class="cat-block-title">{{ taxon.name }}</h3>
+		</a>
+	</div>
+{% endfor %}

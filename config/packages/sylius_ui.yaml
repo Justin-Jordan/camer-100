@@ -1,0 +1,57 @@
+sylius_ui:
+  events:
+    sylius.shop.layout.footer:
+      blocks:
+        icon_box: '@SyliusShop/Layout/Footer/IconBox/_iconBox.html.twig'
+        footer_middle: '@SyliusShop/Layout/Footer/Middle/_middle.html.twig'
+        footer_bottom: '@SyliusShop/Layout/Footer/Bottom/_bottom.html.twig'
+        grid:
+          enabled: false
+        content:
+          enabled: false
+        after_legacy:
+          enabled: false
+    sylius.shop.layout.footer.middle:
+      blocks:
+        info: '@SyliusShop/Layout/Footer/Middle/Info/_info.html.twig'
+        grid: '@SyliusShop/Layout/Footer/Grid/_grid.html.twig'
+    sylius.shop.layout.footer.middle.info:
+      blocks:
+        presentation: '@SyliusShop/Layout/Footer/Middle/Info/_presentation.html.twig'
+        about: '@SyliusShop/Layout/Footer/Middle/Info/_about.html.twig'
+    sylius.shop.layout.footer.middle.info.about:
+      blocks:
+        phone: '@SyliusShop/Layout/Footer/Middle/Info/_phone.html.twig'
+        payment: '@SyliusShop/Layout/Footer/Middle/Info/_payment_methods.html.twig'
+    sylius.shop.layout.footer.grid:
+      blocks:
+        your_store: '@SyliusShop/Layout/Footer/Grid/_your_store.html.twig'
+        customer_care: '@SyliusShop/Layout/Footer/Grid/_customer_care.html.twig'
+        account: '@SyliusShop/Layout/Footer/Grid/_account.html.twig'
+        plus:
+          enabled: false
+        payment_methods:
+          enabled: false
+    
+
+    sylius.shop.homepage:
+      blocks:
+        categories:
+          template: '@SyliusShop/Homepage/_categories.html.twig'
+          priority: 60
+        latest_products_carousel:
+          enabled: false
+        latest_products:
+          template: '@SyliusShop/Homepage/_latestProducts.html.twig'
+          priority: 50
+        latest_by_taxon_and_products:
+          template: '@SyliusShop/Homepage/_latestByTaxonAndProducts.html.twig'
+          priority: 40
+        newsletter:
+          template: '@SyliusShop/Homepage/_newsletter.html.twig'
+          priority: 30
+        products_grid:
+          enabled: false
+        about_us:
+          enabled: false
+        latest_post: '@SyliusShop/Homepage/_latestPosts.html.twig'

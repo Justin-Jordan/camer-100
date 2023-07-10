@@ -1,0 +1,63 @@
+{% macro item(taxon) %}
+	{% import _self as macros %}
+
+	{% if taxon.children|length > 0 %}
+		<li class="megamenu-container">
+			<a class="sf-with-ul" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}</a>
+
+			<div class="megamenu">
+				<div class="row no-gutters">
+					<div class="col-md-8">
+						<div class="menu-col">
+							<div class="row">
+								{% for childTaxon in taxon.children %}
+									{{ macros.itemChild(childTaxon) }}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+	{% else %}
+		<li>
+			<a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}</a>
+		</li>
+	{% endif %}
+
+{% endmacro %}
+
+{% macro itemChild(taxon) %}
+	{% if taxon.children|length > 0 %}
+		<div class="col-md-6">
+			<div class="menu-title">{{ taxon.name }}</div>
+			<ul>
+				{% for childTaxon in taxon.children %}
+					<li>
+						<a href="{{ path('sylius_shop_product_index', {'slug': childTaxon.slug, '_locale': childTaxon.translation.locale}) }}">{{ childTaxon.name }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>>
+	{% else %}
+		<div class="menu-title">
+			<a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}</a>
+		</div>
+	{% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+{% set taxons = taxons ?? [] %}
+
+{% if taxons|length > 0 %}
+	<div class="dropdown-menu show">
+		<nav class="side-nav">
+			<ul class="menu-vertical sf-arrows">
+				{% for taxon in taxons %}
+					{{ macros.item(taxon) }}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+{% endif %}
