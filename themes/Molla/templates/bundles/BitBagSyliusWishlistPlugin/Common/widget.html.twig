@@ -11,7 +11,7 @@
 	<a href="{{ path('bitbag_sylius_wishlist_plugin_shop_wishlist_list_products') }}" class="wishlist-link">
 		<i class="icon-heart-o"></i>
 		<span class="wishlist-count">{{- wishlistProductsCount -}}</span>
-		<span class="wishlist-txt">{{'sylius.ui.whishlist'}}</span>
+		<span class="wishlist-txt">{{'sylius.ui.whishlist'|trans}}</span>
 	</a>
 {% else %}
     <a data-bb-wishlist-enter href="{{ path('bitbag_sylius_wishlist_plugin_shop_wishlist_list_products') }}" class="wishlist-link">

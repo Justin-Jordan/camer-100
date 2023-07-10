@@ -3,7 +3,7 @@
 		<div class="header-left">
 			<div class="dropdown category-dropdown show is-on" data-visible="true">
 				<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-display="static" title="Browse Categories">
-					{{'sylius.ui.browe_categories'}}
+					{{'sylius.ui.browse_categories'|trans}}
 				</a>
 				{{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'menu_category', 'template': '@SyliusShop/Taxon/_verticalMenu.html.twig'})) }}
 

@@ -7,8 +7,8 @@
 		</span>
 
 		<form action="#" method="get" class="mobile-search">
-			<label for="mobile-search" class="sr-only">Search</label>
-			<input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
+			<label for="mobile-search" class="sr-only">{{'sylius.ui.search'|trans}}</label>
+			<input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="{{'sylius.ui.search_in'|trans}}" required>
 			<button class="btn btn-primary" type="submit">
 				<i class="icon-search"></i>
 			</button>
@@ -29,9 +29,9 @@
 
 					{{ render(path('bitbag_sylius_cms_plugin_shop_page_index_by_section_code_template', {'sectionCode' : 'blog', 'template' : '@SyliusShop/Cms/Page/_homeLinksMobile.html.twig'})) }}
 				</nav>
-				<!-- End .mobile-nav -->
+				
 			</div>
-			<!-- .End .tab-pane -->
+			
 			<div class="tab-pane fade" id="mobile-cats-tab" role="tabpanel" aria-labelledby="mobile-cats-link">
 				<nav class="mobile-cats-nav">
 					<ul class="mobile-cats-menu">
@@ -41,19 +41,16 @@
 							</li>
 						{% endfor %}
 					</ul>
-					<!-- End .mobile-cats-menu -->
+					
 				</nav>
-				<!-- End .mobile-cats-nav -->
+				
 			</div>
-			<!-- .End .tab-pane -->
+			
 		</div>
-		<!-- End .tab-content -->
 
 		
 
         {{ render(path('bitbag_sylius_cms_plugin_shop_block_render', {'code' : 'social_links_mobile', 'template' : '@SyliusShop/Cms/Block/_default.html.twig'})) }}
-		<!-- End .social-icons -->
+		
 	</div>
-	<!-- End .mobile-menu-wrapper -->
 </div>
-<!-- End .mobile-menu-container -->
