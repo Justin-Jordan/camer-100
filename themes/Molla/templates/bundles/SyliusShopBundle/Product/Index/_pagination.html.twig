@@ -1,0 +1,19 @@
+{% set paginationLimits = (resources.definition.limits) %}
+
+<div class="toolbox-left">
+	<label for="sortby">{{ 'sylius.ui.show'|trans }} </label>
+	<div class="dropdown">
+		<div class="select-custom">
+			<button class="btn btn-outline-ligth btn-sm" id="dropdowPagination" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{{ resources.data.maxPerPage }}
+			</button>
+
+			<div class="dropdown-menu" aria-labelledby="dropdowPagination">
+				{% for limit in paginationLimits|filter(limit => limit != resources.data.maxPerPage) %}
+					{% set path = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all)|merge({'limit': limit})) %}
+					<a class="dropdown-item" href="{{ path }}" data-text="{{ limit }}">{{ limit }}</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

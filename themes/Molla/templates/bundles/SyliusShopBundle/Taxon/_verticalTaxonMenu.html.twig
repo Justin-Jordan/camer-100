@@ -1,0 +1,61 @@
+{% macro item(taxon, index) %}
+	{% import _self as macros %}
+	{% set show = '' %}
+
+	<div class="acc-item">
+		{% if taxon.children|length > 0 %}
+			<h5>
+				{% if index == 1 %}
+					{% set show = 'show' %}
+					<a role="button" data-toggle="collapse" href="#collapse-{{index}}" aria-expanded="true" aria-controls="collapse-{{index}}">
+						{{ taxon.name }}
+					</a>
+				{% else %}
+					<a role="button" data-toggle="collapse" href="#collapse-{{index}}" aria-expanded="false" aria-controls="collapse-{{index}}">
+						{{ taxon.name }}
+					</a>
+				{% endif %}
+			</h5>
+			<div id="collapse-{{index}}" class="collapse {{show}}" data-parent="#widget-cat-acc">
+				<div class="collapse-wrap">
+					<ul>
+						{% for childTaxon in taxon.children %}
+							<li>
+								<a href="{{ path('sylius_shop_product_index', {'slug': childTaxon.slug, '_locale': childTaxon.translation.locale}) }}">{{ childTaxon.name }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+
+			{% set show = '' %}
+		{% else %}
+			<a role="button" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">
+				{{ taxon.name }}
+			</a>
+		{% endif %}
+	</div>
+
+{% endmacro %}
+
+
+{% import _self as macros %}
+
+{% if taxons|length > 0 %}
+	<aside class="col-lg-3 col-xl-5col order-lg-first">
+		<div class="sidebar sidebar-shop">
+			<div class="widget widget-categories">
+				<h3 class="widget-title">{{ taxons[0].parent }}</h3>
+
+				<div class="widget-body">
+					<div class="accordion" id="widget-cat-acc">
+
+						{% for taxon in taxons %}
+							{{ macros.item(taxon, loop.index) }}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+{% endif %}

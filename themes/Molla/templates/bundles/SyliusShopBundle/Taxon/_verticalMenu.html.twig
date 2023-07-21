@@ -50,8 +50,16 @@
 {% import _self as macros %}
 {% set taxons = taxons ?? [] %}
 
+{% set current_path = app.request.get('_route') %}
+
+{% if current_path == 'sylius_shop_homepage' %}
+	{% set show = "show" %}
+{% else %}
+	{% set show = "" %}
+{% endif %}
+
 {% if taxons|length > 0 %}
-	<div class="dropdown-menu show">
+	<div class="dropdown-menu {{ show }}">
 		<nav class="side-nav">
 			<ul class="menu-vertical sf-arrows">
 				{% for taxon in taxons %}

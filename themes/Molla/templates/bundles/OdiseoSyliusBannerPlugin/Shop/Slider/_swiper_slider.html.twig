@@ -8,9 +8,8 @@
 												                        }
 												                    }'>
 		{% for banner in banners %}
-			<div class="swiper-slide">
 				{% include '@OdiseoSyliusBannerPlugin/Shop/Banner/_image.html.twig' with {'banner': banner} only %}
-			</div>
+
 		{% endfor %}
 
 	</div>

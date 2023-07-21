@@ -32,7 +32,6 @@ sylius_ui:
           enabled: false
         payment_methods:
           enabled: false
-    
 
     sylius.shop.homepage:
       blocks:
@@ -55,3 +54,15 @@ sylius_ui:
         about_us:
           enabled: false
         latest_post: '@SyliusShop/Homepage/_latestPosts.html.twig'
+
+    sylius.shop.product.index.search:
+      blocks:
+        search:
+          enabled: false
+        pagination:
+          enabled: false
+        sorting:
+          enabled: false
+        toolbox:
+          template: '@SyliusShop/Product/Index/_toolbox.html.twig'
+
