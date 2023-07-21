@@ -1,0 +1,17 @@
+<div class="category-banners-slider owl-carousel owl-simple owl-nav-inside" data-toggle="owl" data-owl-options='{
+															                                    "nav": false,
+															                                    "responsive": {
+															                                        "768": {
+															                                            "nav": true
+															                                        }
+															                                    }
+															                                }'>
+
+
+	{% for banner in banners %}
+		<div class="swiper-slide">
+			{% include '@OdiseoSyliusBannerPlugin/Shop/Banner/_taxonImage.html.twig' with {'banner': banner} only %}
+		</div>
+	{% endfor %}
+
+</div>

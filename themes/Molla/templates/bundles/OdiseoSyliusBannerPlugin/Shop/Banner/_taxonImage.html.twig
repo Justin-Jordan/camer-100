@@ -1,0 +1,20 @@
+<div class="banner banner-poster">
+	<a href="{{ banner.url }}">
+		<img src="{{ banner.imageName|imagine_filter('odiseo_sylius_banner_plugin_image') }}" alt="Banner">
+	</a>
+
+	<div class="banner-content">
+		<h3 class="banner-subtitle">
+			<a href="{{ banner.url }}">{{ banner.secondaryText }}</a>
+		</h3>
+		<!-- End .banner-subtitle -->
+		<h2 class="banner-title">
+			<a href="{{ banner.url }}">{{ banner.mainText }}</a>
+		</h2>
+		<!-- End .banner-title -->
+		<a href="{{ banner.url }}" class="banner-link">{{ banner.buttonText }}
+			<i class="icon-long-arrow-right"></i>
+		</a>
+	</div>
+	<!-- End .banner-content -->
+</div>
