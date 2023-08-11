@@ -1,0 +1,24 @@
+{% set rating = review.rating *100/5 %}
+<div class="review">
+	<div class="row no-gutters">
+		<div class="col-auto">
+			<h4>
+				<a>{{ review.author.firstName }}</a>
+			</h4>
+			<div class="ratings-container">
+				<div class="ratings">
+					<div class="ratings-val" style="width: {{ rating }}%;"></div>
+				</div>
+			</div>
+			<span class="review-date">{{ review.createdAt|format_date }}</span>
+		</div>
+		<!-- End .col -->
+		<div class="col">
+			<h4>{{ review.title }}</h4>
+
+			<div class="review-content">
+				<p>{{ review.comment }}</p>
+			</div>
+		</div>
+	</div>
+</div>

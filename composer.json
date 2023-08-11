@@ -9,6 +9,7 @@
         "bitbag/vue-storefront2-plugin": "^1.2",
         "bitbag/wishlist-plugin": "^2.0",
         "dedi/sylius-seo-plugin": "^3.0",
+        "knplabs/knp-gaufrette-bundle": "^0.7.1",
         "odiseoteam/sylius-banner-plugin": "^1.2",
         "stefandoorn/sitemap-plugin": "^2.1",
         "sylius/sylius": "~1.11.0",

@@ -1,0 +1,6 @@
+<div class="ratings-container">
+	{% include '@SyliusShop/Product/_starRating.html.twig' %}
+	<a class="ratings-text" href="#product-review-link" id="review-link">({{ product.acceptedReviews|length }}
+		{{ 'sylius.ui.reviews'|trans }})</a>
+	<a href="{{ path('sylius_shop_product_review_create', {'slug': product.slug, '_locale': product.translation.locale}) }}" class="ratings-text">{{ 'sylius.ui.add_your_review'|trans }}</a>
+</div>

@@ -1,0 +1,49 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusShop/Form/theme.html.twig' %}
+
+{% block title %}
+	{{ 'sylius.ui.write_your_own_review'|trans }}
+	|
+	{{ parent() }}
+{% endblock %}
+
+{% set product = product_review.reviewSubject %}
+
+{% block content %}
+	<div class="page-content">
+		<div class="container">
+			<div class="mt-3"></div>
+			<div class="row" id="reviews">
+				<div class="col-md-3 col-sm-12">
+					{{ sylius_template_event('sylius.shop.product_review.create.product_box', _context) }}
+				</div>
+				<div class="col-md-9 col-sm-12">
+					<div class="border">
+						<div class="pl-2 h4">
+							{{ 'sylius.ui.write_your_own_review'|trans }}
+						</div>
+                        <div class="pl-2 h5">
+								{{ 'sylius.ui.you_are_reviewing'|trans }}
+								<strong>{{ product.name }}</strong>.
+							</div>
+
+						{{ sylius_template_event('sylius.shop.product_review.create.before_form', {'product_review': product_review}) }}
+
+						{{ form_start(form, {'action': path('sylius_shop_product_review_create', {'slug': product.slug, '_locale': product.translation.locale}), 'attr': {'class': 'ui loadable reply form', 'novalidate': 'novalidate'}}) }}
+						{% include '@SyliusShop/ProductReview/_form.html.twig' %}
+
+						{{ sylius_template_event('sylius.shop.product_review.create.form', {'product_review': product_review, 'form': form}) }}
+
+						{{ form_row(form._token) }}
+						<button type="submit" class="ui blue labeled large icon submit button" {{ sylius_test_html_attribute('add') }}>
+							<i class="icon-check"></i>
+							{{ 'sylius.ui.add'|trans }}
+						</button>
+						{{ form_end(form, {'render_rest': false}) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

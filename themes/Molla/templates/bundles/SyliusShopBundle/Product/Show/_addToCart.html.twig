@@ -54,11 +54,11 @@
 			</div>
 			<div class="mobile column tablet column computer column">
 				{% if product.getVendor() is null or product.getVendor().isEnabled() %}
-				<button type="submit" class="ui primary icon labeled button large mobile only large fluid " {{ sylius_test_html_attribute('add-to-cart-button') }}>
-					<i class="cart icon"></i>
-					{{ 'sylius.ui.add_to_cart'|trans }}
-				</button>
-			{% endif %}
+					<button type="submit" class="ui primary icon labeled button large mobile only large fluid " {{ sylius_test_html_attribute('add-to-cart-button') }}>
+						<i class="cart icon"></i>
+						{{ 'sylius.ui.add_to_cart'|trans }}
+					</button>
+				{% endif %}
 			</div>
 
 		</div>
@@ -69,6 +69,25 @@
 			</a>
 		</div>
 	</div>
+
+	<div class="product-details-action">
+		{% if product.getVendor() is null or product.getVendor().isEnabled() %}
+		<button type="submit" class="btn-product btn-cart">
+			<span>{{ 'sylius.ui.add_to_cart'|trans }}</span>
+		</button>
+		{% endif %}
+
+		<div class="details-action-wrapper">
+			<button type="submit" class="btn-product btn-wishlist" name="{{ form.addToWishlist.vars.full_name }}" title="Wishlist">
+				<span>{{ form.addToWishlist.vars.label|trans }}</span>
+			</button>
+			<a href="#" class="btn-product btn-success" title="{{ 'order.on.whatsApp'|trans }}">
+				<span>{{ 'order.on.whatsApp'|trans }}</span>
+			</a>
+		</div>
+		<!-- End .details-action-wrapper -->
+	</div>
+	<!-- End .product-details-action -->
 
 	{{ form_row(form._token) }}
 	{{ form_end(form, {'render_rest': false}) }}
