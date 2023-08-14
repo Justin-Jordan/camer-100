@@ -1,0 +1,13 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+{% set variant = product|sylius_resolve_variant %}
+{% set hasDiscount = variant|sylius_has_discount({'channel': sylius.channel}) %}
+{% set appliedPromotions = variant.getChannelPricingForChannel(sylius.channel).getAppliedPromotions() %}
+
+<span >{{ money.calculatePrice(variant) }}</span>
+{% if hasDiscount %}
+	<span class="old-price">{{ money.calculateOriginalPrice(variant) }}</span>
+{% endif %}
+
+{% include '@SyliusShop/Product/Show/_catalogPromotionLabels.html.twig' with {'appliedPromotions': appliedPromotions, 'withDescription': true} %}
+

@@ -1,0 +1,29 @@
+<nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+	<div class="container d-flex align-items-center">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('sylius_shop_homepage') }}">{{ 'sylius.ui.home'|trans }}</a>
+			</li>
+			{% if product.mainTaxon is not null %}
+				{% set taxon = product.mainTaxon %}
+				{% set ancestors = taxon.ancestors|reverse %}
+
+				{% for ancestor in ancestors %}
+					{% if ancestor.isRoot()  or not ancestor.enabled %}
+						<li class="breadcrumb-item">
+							{{ ancestor.name }}
+						</li>
+					{% else %}
+						<li class="breadcrumb-item">
+							<a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}">{{ ancestor.name }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+				<li class="breadcrumb-item">
+				<a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="section">{{ taxon.name }}</a>
+				</li>
+			{% endif %}
+			<li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+		</ol>
+	</div>
+</nav>

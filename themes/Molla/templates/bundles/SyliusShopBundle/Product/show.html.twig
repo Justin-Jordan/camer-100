@@ -1,29 +1,30 @@
 {% extends '@SyliusShop/layout.html.twig' %}
 
 
-
 {% block content %}
-{% include '@SyliusShop/Product/Show/_breadcrumb.html.twig' %}
-<div class="ui hidden divider"></div>
+	<div class="page-content">
+		<div class="container">
+			{% include '@SyliusShop/Product/Show/_breadcrumb.html.twig' %}
+			<div class="ui hidden divider"></div>
 
-<div class="ui two column stackable grid">
-    <div class="column">
-        {{ sylius_template_event('sylius.shop.product.show.left_sidebar', _context) }}
-    </div>
-    <div class="column">
-        {{ sylius_template_event('sylius.shop.product.show.right_sidebar', _context) }}
-    </div>
-</div>
+			<div class="ui two column stackable grid">
+				<div class="column">
+					{{ sylius_template_event('sylius.shop.product.show.left_sidebar', _context) }}
+				</div>
+				<div class="column">
+					{{ sylius_template_event('sylius.shop.product.show.right_sidebar', _context) }}
+				</div>
+			</div>
 
-{{ sylius_template_event('sylius.shop.product.show.content', _context) }}
+			{{ sylius_template_event('sylius.shop.product.show.content', _context) }}
+		</div>
+	</div>
 {% endblock %}
 
 {% block javascripts %}
-{{ parent() }}
+	{{ parent() }}
 
-<script type="text/javascript">
-    lightbox.option({
-        'albumLabel': '{{ 'sylius.lightbox.image_album_label'|trans|escape('js') }}'
-    });
-</script>
+	<script type="text/javascript">
+		lightbox.option({'albumLabel': '{{ 'sylius.lightbox.image_album_label'|trans|escape('js') }}'});
+	</script>
 {% endblock %}
