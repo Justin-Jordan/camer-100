@@ -28,3 +28,6 @@ import "./js/jquery.countdown.min.js"
 //Main js
 import "./js/main.js"
 import "./js/demos/demo-13.js"
+
+import { registerVueControllerComponents } from '@symfony/ux-vue';
+registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));

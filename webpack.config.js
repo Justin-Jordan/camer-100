@@ -58,7 +58,8 @@ Encore
 
   .enableSourceMaps(!Encore.isProduction())
   .enableVersioning(Encore.isProduction())
-  .enableSassLoader();
+  .enableSassLoader()
+  .enableVueLoader()
 
 const mollaShopConfig = Encore.getWebpackConfig();
 

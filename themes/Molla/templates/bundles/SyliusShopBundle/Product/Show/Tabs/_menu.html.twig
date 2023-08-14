@@ -1,0 +1,14 @@
+<ul class="nav nav-pills justify-content-center" role="tablist">
+	<li class="nav-item">
+		<a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">{{ 'sylius.ui.details'|trans }}</a>
+	</li>
+	{% if product.attributes|length > 0 %}
+		<li class="nav-item">
+			<a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab" aria-controls="product-info-tab" aria-selected="false">{{ 'sylius.ui.attributes'|trans }}</a>
+		</li>
+	{% endif %}
+	<li class="nav-item">
+		<a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">{{ 'sylius.ui.reviews'|trans }}
+			({{ product.acceptedReviews|length }})</a>
+	</li>
+</ul>
