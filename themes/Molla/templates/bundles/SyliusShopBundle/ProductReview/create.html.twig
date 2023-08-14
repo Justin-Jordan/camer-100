@@ -28,6 +28,7 @@
 								<strong>{{ product.name }}</strong>.
 							</div>
 
+
 						{{ sylius_template_event('sylius.shop.product_review.create.before_form', {'product_review': product_review}) }}
 
 						{{ form_start(form, {'action': path('sylius_shop_product_review_create', {'slug': product.slug, '_locale': product.translation.locale}), 'attr': {'class': 'ui loadable reply form', 'novalidate': 'novalidate'}}) }}

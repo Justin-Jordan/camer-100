@@ -6,7 +6,7 @@
 {% form_theme form '@SyliusShop/Form/theme.html.twig' %}
 
 
-<div class="ui segment" id="sylius-product-selecting-variant">
+<div class="product-details" id="sylius-product-selecting-variant">
 	{{ sonata_block_render_event('sylius.shop.product.show.before_add_to_cart', {'product': product, 'order_item': order_item}) }}
 
 	{{ form_start(form, {
@@ -44,33 +44,7 @@
 	</div>
 	<div class="ui hidden divider"></div>
 
-	<div class="ui grid centered">
-		<div class="mobile ui two stackable column row tablet ui two column row computer">
-			<div class="mobile column tablet column computer column">
-				<button id="{{ form.addToWishlist.vars.id }}" name="{{ form.addToWishlist.vars.full_name }}" class="{{ form.addToWishlist.vars.attr.class }} mobile only fluid" data-bb-toggle="wishlist-variant" {{ sylius_test_html_attribute('wishlist-add-variant') }}>
-					<i class="heart icon"></i>
-					{{ form.addToWishlist.vars.label|trans }}
-				</button>
-			</div>
-			<div class="mobile column tablet column computer column">
-				{% if product.getVendor() is null or product.getVendor().isEnabled() %}
-					<button type="submit" class="ui primary icon labeled button large mobile only large fluid " {{ sylius_test_html_attribute('add-to-cart-button') }}>
-						<i class="cart icon"></i>
-						{{ 'sylius.ui.add_to_cart'|trans }}
-					</button>
-				{% endif %}
-			</div>
-
-		</div>
-		<div class="mobile column tablet column computer column">
-			<a target="_blank" href="https://wa.me/237694694792?text={{ message }}," class="fluid ui large green icon labeled button">
-				<i class="whatsapp icon"></i>
-				{{ 'order.on.whatsApp'|trans }}
-			</a>
-		</div>
-	</div>
-
-	<div class="product-details-action">
+	<div class="product-details-action d-flex">
 		{% if product.getVendor() is null or product.getVendor().isEnabled() %}
 		<button type="submit" class="btn-product btn-cart">
 			<span>{{ 'sylius.ui.add_to_cart'|trans }}</span>
@@ -81,13 +55,11 @@
 			<button type="submit" class="btn-product btn-wishlist" name="{{ form.addToWishlist.vars.full_name }}" title="Wishlist">
 				<span>{{ form.addToWishlist.vars.label|trans }}</span>
 			</button>
-			<a href="#" class="btn-product btn-success" title="{{ 'order.on.whatsApp'|trans }}">
+			<a href="https://wa.me/237694694792?text={{ message }}" class="btn-product btn-success" title="{{ 'order.on.whatsApp'|trans }}">
 				<span>{{ 'order.on.whatsApp'|trans }}</span>
 			</a>
 		</div>
-		<!-- End .details-action-wrapper -->
 	</div>
-	<!-- End .product-details-action -->
 
 	{{ form_row(form._token) }}
 	{{ form_end(form, {'render_rest': false}) }}

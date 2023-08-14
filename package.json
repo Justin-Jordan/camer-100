@@ -10,7 +10,9 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@storefront-ui/vue": "^2.5.0",
     "@symfony/webpack-encore": "^1.7.0",
+    "autoprefixer": "^10.4.14",
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -26,8 +28,11 @@
     "file-loader": "^6.0.0",
     "merge-stream": "^1.0.0",
     "node-sass": "^4.14",
+    "postcss": "^8.4.27",
     "sass-loader": "^7.0.1",
+    "tailwindcss": "^3.3.3",
     "upath": "^1.1.0",
+    "vue-loader": "^17.2.2",
     "yargs": "^6.4.0"
   },
   "scripts": {
